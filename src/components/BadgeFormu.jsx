@@ -1,10 +1,18 @@
 import React from "react";
 
 class BadgeFormu extends React.Component {
+  state = {
+    jobTitle: "Designer"
+  };
+
   handleChange = e => {
-    console.log({
+    /* console.log({
       name: e.target.name,
       value: e.target.value
+    }); */
+
+    this.setState({
+      [e.target.name]: e.target.value
     });
   };
 
@@ -13,9 +21,9 @@ class BadgeFormu extends React.Component {
   };
 
   handleSubmit = e => {
-    // para evitar que el form se envie
     e.preventDefault();
     console.log("form was submitted");
+    console.log(this.state);
   };
 
   render() {
@@ -31,6 +39,47 @@ class BadgeFormu extends React.Component {
               className="form-control"
               type="text"
               name="firstName"
+              value={this.state.firstName}
+            />
+          </div>
+          <div className="form-group">
+            <label>Last Name</label>
+            <input
+              onChange={this.handleChange}
+              className="form-control"
+              type="text"
+              name="lastName"
+              value={this.state.lastName}
+            />
+          </div>
+          <div className="form-group">
+            <label>Email</label>
+            <input
+              onChange={this.handleChange}
+              className="form-control"
+              type="email"
+              name="email"
+              value={this.state.email}
+            />
+          </div>
+          <div className="form-group">
+            <label>Job Title</label>
+            <input
+              onChange={this.handleChange}
+              className="form-control"
+              type="text"
+              name="jobTitle"
+              value={this.state.jobTitle}
+            />
+          </div>
+          <div className="form-group">
+            <label>Twitter</label>
+            <input
+              onChange={this.handleChange}
+              className="form-control"
+              type="text"
+              name="twitter"
+              value={this.state.title}
             />
           </div>
           <button onClick={this.handleClick} className="btn btn-primary">
