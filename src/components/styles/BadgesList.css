@@ -1,0 +1,35 @@
+.BadgesList li > h6 {
+  margin-bottom: 0.3rem;
+}
+
+.BadgesListItem {
+  background: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+  display: flex;
+  padding: 1rem;
+}
+
+.BadgesListItem__avatar {
+  border-radius: 50%;
+  background: #a3a3a3;
+  margin-right: 0.5rem;
+  width: 80px;
+  height: 80px;
+}
+
+.BadgesListItem__twitter {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #1da1f2;
+}
+
+.BadgesListItem__twitter i {
+  font-size: 16px;
+}
+
+.BadgesListItem__twitter a,
+.BadgesListItem__twitter a:hover {
+  color: #1da1f2;
+}

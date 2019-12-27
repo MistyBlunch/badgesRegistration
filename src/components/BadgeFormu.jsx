@@ -10,7 +10,7 @@ class BadgeFormu extends React.Component {
   }; */
 
   handleClick = e => {
-    console.log("click heee");
+    console.log("click here");
   };
 
   handleSubmit = e => {
