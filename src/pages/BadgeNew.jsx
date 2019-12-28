@@ -4,25 +4,12 @@ import "./styles/BadgeNew.css";
 import header from "../images/badge-header.svg";
 import Badge from "../components/Badge";
 import BadgeFormu from "../components/BadgeFormu";
-import Navbar from "../components/Navbar";
 
 class BadgeNew extends React.Component {
-  // Forma 1
-  /* state = { form: {} };
-
-  handleChange = e => {
-    const nextForm = this.state.form;
-    nextForm[e.target.name] = e.target.value;
-
-    this.setState({
-      form: nextForm
-    });
-  }; */
-
-  // Forma 2
   state = {
     form: {
-      // Para que la información sea considerada commo controlada, da un valor inicial
+      /* Para que la información sea considerada 
+      commo controlada, da un valor inicial*/
       firstName: "",
       lastName: "",
       jobTitle: "",
@@ -34,7 +21,7 @@ class BadgeNew extends React.Component {
   handleChange = e => {
     this.setState({
       form: {
-        // Dejamos caer todos los valores que hay en el thi.state.form
+        // Dejamos caer todos los valores que hay en el this.state.form
         ...this.state.form,
         // Y añadimo uno o sobreescribimos los valores ya guardados, solo del campo especificado
         [e.target.name]: e.target.value
@@ -44,8 +31,7 @@ class BadgeNew extends React.Component {
 
   render() {
     return (
-      <div>
-        <Navbar />
+      <React.Fragment>
         <div className="BadgeNew__hero">
           <img className="img-fluid" src={header} alt="Logo" />
         </div>
@@ -71,7 +57,7 @@ class BadgeNew extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
