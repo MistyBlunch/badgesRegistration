@@ -8,14 +8,12 @@ import BadgesList from "../components/BadgesList";
 class Badges extends React.Component {
   constructor(props) {
     super(props);
-    console.log("1. constructor()");
     this.state = {
       data: []
     };
   }
 
   componentDidMount() {
-    console.log("3 componentDidMount()");
     /* Guardando un valor en timeoutId de un setTimeout que simula 
     una petición a una API */
     this.timeoutId = setTimeout(() => {
@@ -57,7 +55,6 @@ class Badges extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log("5 componentDidUpdate()");
     console.log({
       prevProps: prevProps,
       prevState: prevState
@@ -70,14 +67,11 @@ class Badges extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log("6, componentWillUnmount()");
-
     /* Limpiando el setTimeout para no llemar la memoria */
     clearTimeout(this.timeoutId);
   }
 
   render() {
-    console.log("2/4. render()");
     return (
       <React.Fragment>
         <div className="Badges">
