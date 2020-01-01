@@ -9,12 +9,12 @@ export default class Loader extends Component {
         <div />
         <div />
         <div />
-        {/*         <div />
         <div />
         <div />
         <div />
         <div />
-        <div /> */}
+        <div />
+        <div />
       </div>
     );
   }
