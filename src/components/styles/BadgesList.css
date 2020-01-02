@@ -1,5 +1,5 @@
-.BadgesList li > h6 {
-  margin-bottom: 0.3rem;
+.BadgesList ul > li {
+  margin-bottom: 1rem;
 }
 
 .BadgesListItem {
@@ -23,6 +23,7 @@
   align-items: center;
   font-size: 14px;
   color: #1da1f2;
+  margin-bottom: 0;
 }
 
 .BadgesListItem__twitter i {

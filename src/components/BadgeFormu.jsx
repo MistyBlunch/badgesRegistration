@@ -62,7 +62,7 @@ class BadgeFormu extends React.Component {
               className="form-control"
               type="text"
               name="twitter"
-              value={this.props.formValues.title}
+              value={this.props.formValues.twitter}
             />
           </div>
           <button onClick={this.handleClick} className="btn btn-primary">

@@ -30,9 +30,7 @@ class BadgeEdit extends React.Component {
     this.setState({ loading: true, error: null });
 
     try {
-      const data = await AudioParam.badges.read(
-        this.props.match.paeams.badgeId
-      );
+      const data = await api.badges.read(this.props.match.params.badgeId);
 
       this.setState({ loading: false, form: data });
     } catch (error) {
@@ -56,7 +54,7 @@ class BadgeEdit extends React.Component {
     this.setState({ loading: true, error: null });
 
     try {
-      await api.badges.update(this.state.form);
+      await api.badges.update(this.props.match.params.badgeId, this.state.form);
       this.setState({ loading: false });
 
       this.props.history.push("/badges");

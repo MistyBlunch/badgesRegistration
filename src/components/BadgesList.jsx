@@ -4,6 +4,31 @@ import { Link } from "react-router-dom";
 import "./styles/BadgesList.css";
 import Gravatar from "../components/Gravatar";
 
+class BadgesListItem extends React.Component {
+  render() {
+    return (
+      <div className="BadgesListItem mb-3">
+        <Gravatar
+          className="BadgesListItem__avatar"
+          email={this.props.badge.email}
+        />
+
+        <div>
+          <strong>
+            {this.props.badge.firstName} {this.props.badge.lastName}
+          </strong>
+          <br />
+          <h6 className="BadgesListItem__twitter">
+            <i className="fab fa-twitter mr-1"></i>
+            <span>@{this.props.badge.twitter}</span>
+          </h6>
+          {this.props.badge.jobTitle}
+        </div>
+      </div>
+    );
+  }
+}
+
 class BadgesList extends React.Component {
   render() {
     if (this.props.badges.length === 0) {
@@ -17,46 +42,21 @@ class BadgesList extends React.Component {
       );
     }
     return (
-      <div className="container BadgesList">
-        {this.props.badges.map(badge => {
-          return (
-            <Link
-              className="text-reset text-decoration-none"
-              to={`/badges/${badge.id}/edit`}
-            >
-              <div className="row BadgesListItem mb-3" key={badge.id}>
-                <div className="col-3">
-                  <Gravatar
-                    email={badge.email}
-                    className="img-fluid BadgesListItem__avatar"
-                    alt="avatarPerson"
-                  />
-                </div>
-                <div className="col-9">
-                  <ul className="list-unstyled">
-                    <li>
-                      <h6 className="font-weight-bold">
-                        {badge.firstName} {badge.lastName}
-                      </h6>
-                      <h6 className="BadgesListItem__twitter">
-                        <i className="fab fa-twitter mr-1"></i>
-                        <a
-                          className="text-decoration-none"
-                          href={"https://twitter.com/" + badge.twitter}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <span>@{badge.twitter}</span>
-                        </a>
-                      </h6>
-                      <h6>{badge.jobTitle}</h6>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </Link>
-          );
-        })}
+      <div className="BadgesList">
+        <ul className="list-unstyled">
+          {this.props.badges.map(badge => {
+            return (
+              <li key={badge.id}>
+                <Link
+                  className="text-reset text-decoration-none"
+                  to={`/badges/${badge.id}/edit`}
+                >
+                  <BadgesListItem badge={badge} />
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     );
   }
