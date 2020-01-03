@@ -1,16 +1,6 @@
 import React from "react";
 
 class BadgeFormu extends React.Component {
-  handleClick = e => {
-    console.log("click here");
-  };
-
-  // handleSubmit = e => {
-  //   e.preventDefault();
-  //   console.log("form was submitted");
-  //   console.log(this.state);
-  // };
-
   render() {
     return (
       <div>
