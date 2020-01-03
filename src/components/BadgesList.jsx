@@ -29,16 +29,27 @@ class BadgesListItem extends React.Component {
   }
 }
 
+function useSearchBadges(badges) {
+  const [query, setQuery] = React.useState("");
+  const [filteredBadges, setfilteredBadges] = React.useState(badges);
+
+  React.useMemo(() => {
+    const result = badges.filter(badge => {
+      return `${badge.firstName} ${badge.lastName} ${badge.twitter}`
+        .toLowerCase()
+        .includes(query.toLowerCase());
+    });
+
+    setfilteredBadges(result);
+  }, [badges, query]);
+
+  return { query, setQuery, filteredBadges };
+}
+
 function BadgesList(props) {
   const badges = props.badges;
 
-  const [query, setQuery] = React.useState("");
-
-  const filteredBadges = badges.filter(badge => {
-    return `${badge.firstName} ${badge.lastName} ${badge.twitter}`
-      .toLowerCase()
-      .includes(query.toLowerCase());
-  });
+  const { query, setQuery, filteredBadges } = useSearchBadges(badges);
 
   if (badges.length === 0 || filteredBadges.length === 0) {
     return (
