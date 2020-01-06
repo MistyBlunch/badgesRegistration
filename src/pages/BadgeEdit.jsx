@@ -57,7 +57,7 @@ class BadgeEdit extends React.Component {
       await api.badges.update(this.props.match.params.badgeId, this.state.form);
       this.setState({ loading: false });
 
-      this.props.history.push("/badges");
+      this.props.history.push("/badgesRegistration/badges");
     } catch (error) {
       this.setState({ loading: false, error: error });
     }
@@ -77,7 +77,7 @@ class BadgeEdit extends React.Component {
           />
         </div>
 
-        <div className="container">
+        <div className="container mb-4">
           <div className="row">
             <div className="col-6">
               <Badge

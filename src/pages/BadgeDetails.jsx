@@ -26,7 +26,7 @@ function BadgeDetails(props) {
         </div>
       </div>
 
-      <div className="container">
+      <div className="container mb-4">
         <div className="row">
           <div className="col">
             <Badge
@@ -43,7 +43,7 @@ function BadgeDetails(props) {
               <div>
                 <Link
                   className="btn btn-primary mb-4"
-                  to={`/badges/${badge.id}/edit`}
+                  to={`/badgesRegistration/badges/${badge.id}/edit`}
                 >
                   Edit
                 </Link>

@@ -66,7 +66,7 @@ function BadgesList(props) {
           />
         </div>
         <h3>No badges were found :c</h3>
-        <Link className="btn btn-primary" to="/badges/new">
+        <Link className="btn btn-primary" to="/badgesRegistration/badges/new">
           Create new badge
         </Link>
       </div>
@@ -91,7 +91,7 @@ function BadgesList(props) {
             <li key={badge.id}>
               <Link
                 className="text-reset text-decoration-none"
-                to={`/badges/${badge.id}`}
+                to={`/badgesRegistration/badges/${badge.id}`}
               >
                 <BadgesListItem badge={badge} />
               </Link>

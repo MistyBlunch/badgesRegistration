@@ -19,7 +19,7 @@ export default class Home extends React.Component {
               />
 
               <h1>Badge Management System</h1>
-              <Link className="btn btn-primary" to="/badges">
+              <Link className="btn btn-primary" to="/badgesRegistration/badges">
                 Start
               </Link>
             </div>

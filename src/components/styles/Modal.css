@@ -27,3 +27,7 @@
   background-color: #f5f5f5;
   padding: 0.5rem 1rem;
 }
+
+.DeleteBadgeModal {
+  text-align: center;
+}
